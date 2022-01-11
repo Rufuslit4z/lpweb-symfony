@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    {% for product in products %}
+        <h2><a href="{{ path('product.show', {id : product.getId()}) }}">{{ product.getName() }}</a></h2>
+        <p>Prix : {{ product.getPrice() }}€</p>
+        <p>Date de création : {{ product.getCreatedAt() | date('d/m/Y') }}</p>
+        <p>Description : {{ product.getDescription() |slice(1, 300) }} ... <a href="{{ path('product.show', {id : product.getId()}) }}">voir plus</a></p>
+    {% endfor %}
+
+</div>
+{% endblock %}

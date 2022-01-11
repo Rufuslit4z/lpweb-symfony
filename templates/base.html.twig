@@ -3,6 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
@@ -14,6 +18,21 @@
         {% endblock %}
     </head>
     <body>
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">POC</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="{{ path('product.index') }}">Produits</a></li>
+                        <li><a href="#">Commandes</a></li>
+                        <li><a href="#">Panier</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
         {% block body %}{% endblock %}
     </body>
 </html>
