@@ -2,6 +2,12 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
+# --- HOME --- #
+
+home.index:
+  path: /home
+  controller: App\Controller\HomeController:index
+
 # --- PRODUCT --- #
 
 product.index:
