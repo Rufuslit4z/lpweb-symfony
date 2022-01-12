@@ -24,10 +24,11 @@ class ProductController extends AbstractController
         $product = $productRepository->find($id);
         if (!$product)
         {   
-            throw $this->createNotFoundException('The article does not exist');
-        }else{
+            throw $this->createNotFoundException('The product does not exist');
+        } else {
             return $this->render('product/show.html.twig', [
                  'product' => $product,
+                 'id' => $id,
             ]);
         }
        

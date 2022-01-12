@@ -2,6 +2,8 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
+# --- PRODUCT --- #
+
 product.index:
   path: /product
   controller: App\Controller\ProductController:index
@@ -9,3 +11,13 @@ product.index:
 product.show:
     path: /product/{id}
     controller: App\Controller\ProductController::show
+
+# --- CART --- #
+
+cart.index:
+  path: /cart
+  controller: App\Controller\CartController::index
+
+cart.add:
+  path: /cart/add/{id}
+  controller: App\Controller\CartController::add
