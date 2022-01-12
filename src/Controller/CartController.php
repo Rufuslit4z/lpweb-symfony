@@ -1,17 +1,31 @@
 <?php
 
 namespace App\Controller;
+// namespace App\Entity;
 
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CartController extends AbstractController
 {
-    public function index(): Response
+    public function index(ProductRepository $productRepository, SessionInterface $session): Response
     {
+        $products = [];
+        $count = 0;
+        $cart = $session->get('panier', []);
+        $totalPrice = 0;
+        foreach($cart as $id => $quantity){
+            $product = $productRepository->findById($id);
+            $products[$count] = ['product' => $product, 'quantity' => $quantity];
+            $totalPrice += $product[0]->getPrice();
+            $count++;
+        }
+        
         return $this->render('cart/index.html.twig', [
-            // 'controller_name' => 'CartController',
+            'products' => $products,
+            'totalPrice' => $totalPrice,
         ]);
     }
 

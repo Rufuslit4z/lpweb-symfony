@@ -36,6 +36,15 @@ class ProductRepository extends ServiceEntityRepository
     }
     */
 
+    public function finById($id){
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.id = :val')
+            ->setParameter('val', $id)
+            ->orderBy('p.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
     /*
     public function findOneBySomeField($value): ?Product
     {
