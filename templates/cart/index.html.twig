@@ -34,5 +34,12 @@
         </tbody>
     </table>
     <p style="text-align: right;">Prix total : {{ totalPrice }}€</p>
+
+    {{ form_start(commandForm) }}
+        {{ form_row(commandForm.email) }}
+        <button type="submit" class="btn btn-primary btn-block">
+            OK
+        </button>
+    {{ form_end(commandForm) }}
 </div>
 {% endblock %}

@@ -36,7 +36,15 @@ class Product
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
-
+    
+    /**
+    * toString
+    * @return string
+    */
+    public function __toString(){
+        return "";
+    }
+    
     public function getId(): ?int
     {
         return $this->id;
