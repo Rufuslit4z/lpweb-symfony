@@ -29,7 +29,7 @@ class CartController extends AbstractController
         ]);
     }
 
-    public function add($id, SessionInterface $session): Response
+    public function add(int $id, SessionInterface $session): Response
     {
         $cart = $session->get('panier', []);
         $cart[$id] = 1;
@@ -38,5 +38,17 @@ class CartController extends AbstractController
         return $this->render('cart/add.html.twig', [
             // 'controller_name' => 'CartController',
         ]);        
+    }
+
+    public function delete(int $id, SessionInterface $session): Response
+    {
+        $cart = $session->get('panier', []);
+        $message = "Le produit a été retiré de votre panier";
+        if($cart[$id]){
+            unset($cart[$id]);
+            $session->set('panier', $cart);
+            $this->addFlash('success','Article supprimé');
+        }
+        return $this->redirectToRoute('cart.index');
     }
 }

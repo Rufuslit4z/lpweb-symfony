@@ -9,6 +9,11 @@
 </style>
 
 <div class="example-wrapper">
+    {% for message in app.flashes('success')%}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
     <table class="table">
         <theader>
             <tr class="bg-primary">
@@ -23,6 +28,7 @@
                 <td>{{ product['product'][0].getName() }}</td>
                 <td>{{ product['product'][0].getPrice() }}€</td>
                 <td>{{ product['quantity'] }}</td>
+                <td><a class="btn btn-danger" href="{{ path('cart.delete', {id : product['product'][0].getId()}) }}">Supprimer</a></td>
             </tr>
         {% endfor %}
         </tbody>

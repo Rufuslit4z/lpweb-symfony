@@ -21,3 +21,7 @@ cart.index:
 cart.add:
   path: /cart/add/{id}
   controller: App\Controller\CartController::add
+
+cart.delete:
+  path: /cart/delete/{id}
+  controller: App\Controller\CartController::delete

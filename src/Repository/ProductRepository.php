@@ -36,7 +36,7 @@ class ProductRepository extends ServiceEntityRepository
     }
     */
 
-    public function finById($id){
+    public function finById(int $id){
         return $this->createQueryBuilder('p')
             ->andWhere('p.id = :val')
             ->setParameter('val', $id)
