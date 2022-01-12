@@ -28,7 +28,7 @@
                 <td>{{ product['product'][0].getName() }}</td>
                 <td>{{ product['product'][0].getPrice() }}€</td>
                 <td>{{ product['quantity'] }}</td>
-                <td><a class="btn btn-danger" href="{{ path('cart.delete', {id : product['product'][0].getId()}) }}">Supprimer</a></td>
+                <td><a class="btn btn-danger" href="{{ path('cart.delete', { id : product['product'][0].getId() }) }}">Supprimer</a></td>
             </tr>
         {% endfor %}
         </tbody>

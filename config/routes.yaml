@@ -18,6 +18,16 @@ product.show:
     path: /product/{id}
     controller: App\Controller\ProductController::show
 
+# --- COMMAND --- #
+
+command.index:
+  path: /command
+  controller: App\Controller\CommandController::index
+
+command.show:
+  path: /command/{id}
+  controller: App\Controller\CommandController::show
+
 # --- CART --- #
 
 cart.index:
