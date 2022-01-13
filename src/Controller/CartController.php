@@ -24,7 +24,7 @@ class CartController extends AbstractController
         foreach($cart as $id => $quantity){
             $product = $productRepository->findById($id);
             $products[$count] = ['product' => $product, 'quantity' => $quantity];
-            $totalPrice += $product[0]->getPrice();
+            $totalPrice += $product[0]->getPrice() * $quantity;
             $count++;
         }
 
@@ -57,7 +57,7 @@ class CartController extends AbstractController
     public function add(int $id, SessionInterface $session): Response
     {
         $cart = $session->get('panier', []);
-        $cart[$id] = 1;
+        $cart[$id]++;
         $session->set('panier', $cart);
         
         return $this->render('cart/add.html.twig', [

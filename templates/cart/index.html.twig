@@ -19,15 +19,17 @@
             <tr class="bg-primary">
                 <th>Nom du produit</th>
                 <th>Quantité</th>
-                <th>Prix</th>
+                <th>Prix unité</th>
+                <th>Prix total</th>
             </tr>
         </theader>
         <tbody>
         {% for product in products %}
             <tr class="bg-success">
                 <td>{{ product['product'][0].getName() }}</td>
-                <td>{{ product['product'][0].getPrice() }}€</td>
                 <td>{{ product['quantity'] }}</td>
+                <td>{{ product['product'][0].getPrice() }}€</td>
+                <td>{{ product['product'][0].getPrice() * product['quantity'] }}€</td>
                 <td><a class="btn btn-danger" href="{{ path('cart.delete', { id : product['product'][0].getId() }) }}">Supprimer</a></td>
             </tr>
         {% endfor %}
