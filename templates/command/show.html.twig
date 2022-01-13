@@ -13,12 +13,14 @@
         <thead>
             <tr>
                 <th>Commande N°{{ command[0].getId() }}</th>
+                <th></th>
                 <th>{{ command[0].getEmail() }}</th>
             </tr>
         </thead>
         <tbody>
             {% for product in products %}
                 <tr>
+                    <td><img src="{{ product.getImage() }}"></img></td>
                     <td><a href="{{ path('product.show', { id : product.getId() }) }}">{{ product.getName() }}</a></td>
                     <td>{{ product.getPrice() }}€</td>
                 </tr>

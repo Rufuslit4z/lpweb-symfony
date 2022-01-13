@@ -10,6 +10,7 @@
 
 <div class="example-wrapper">
     <h2>{{ product.getName() }}</h2>
+    <img src="{{ product.getImage() }}"></img>
     <p>Prix : {{ product.getPrice() }}€</p>
     <p>Date de création : {{ product.getCreatedAt() | date('d/m/Y') }}</p>
     <p>Description : {{ product.getDescription() }}</p>

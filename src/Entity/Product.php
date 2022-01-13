@@ -33,6 +33,11 @@ class Product
     private $description;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
@@ -89,6 +94,18 @@ class Product
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
     }
 
     public function setCreatedAt(\DateTimeInterface $createdAt): self

@@ -17,6 +17,7 @@
     <table class="table">
         <theader>
             <tr class="bg-primary">
+                <th></th>
                 <th>Nom du produit</th>
                 <th>Quantité</th>
                 <th>Prix unité</th>
@@ -26,6 +27,7 @@
         <tbody>
         {% for product in products %}
             <tr class="bg-success">
+                <td><img src="{{ product['product'][0].getImage() }}"></img></td>
                 <td>{{ product['product'][0].getName() }}</td>
                 <td>{{ product['quantity'] }}</td>
                 <td>{{ product['product'][0].getPrice() }}€</td>

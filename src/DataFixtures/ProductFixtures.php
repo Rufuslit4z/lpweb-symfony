@@ -18,6 +18,7 @@ class ProductFixtures extends Fixture
             $product->setName($faker->name())
                 ->setPrice($faker->randomNumber(2))
                 ->setDescription($faker->text(3000))
+                ->setImage("https://www.piecemaitresse.fr/img/cms/Rubis/Rubis-rouge-300.jpg")
                 ->setCreatedAt($faker->dateTimeThisYear());
             $manager->persist($product);
         }
