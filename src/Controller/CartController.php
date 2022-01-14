@@ -21,7 +21,6 @@ class CartController extends AbstractController
         $count = 0;
         $cart = $session->get('panier', []);
         $totalPrice = 0;
-        // dd($cart);
         foreach($cart as $id => $quantity){
             $product = $productRepository->findById($id);
             $products[$count] = ['product' => $product, 'quantity' => $quantity];
@@ -35,6 +34,7 @@ class CartController extends AbstractController
         
         if ($commandForm->isSubmitted() && $commandForm->isValid())
         {
+            $session->set('email', $command->getEmail());
             $command->setCreatedAt(new \DateTime);
             foreach($products as $index => $product){
                 $command->addProduct($product['product'][0]);

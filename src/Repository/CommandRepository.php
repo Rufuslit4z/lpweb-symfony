@@ -26,4 +26,13 @@ class CommandRepository extends ServiceEntityRepository
                     ->getQuery()
                     ->getResult();
     }
+
+    public function findByEmail(string $email){
+        return $this->createQueryBuilder('p')
+                    ->andWhere('p.email = :val')
+                    ->setParameter('val', $email)
+                    ->getQuery()
+                    ->getResult();
+    }
+
 }
