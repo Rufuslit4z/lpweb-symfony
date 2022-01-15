@@ -10,6 +10,7 @@ docker-compose build --no-cache
 docker-compose up -d
 docker exec -it symfony-php bash
 composer install
+# Supprimer les fichiers "Version*.php" dans lpweb-symfony/migrations
 php bin/console make:migration
 php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load
