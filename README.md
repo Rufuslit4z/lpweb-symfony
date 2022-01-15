@@ -14,3 +14,9 @@ php bin/console make:migration
 php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load
 ```
+
+# Lest ports d'accès
+symfony : 7780  
+phpmyadmin : 7779
+
+# Page d'accueil
