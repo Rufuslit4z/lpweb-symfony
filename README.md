@@ -3,7 +3,7 @@ Suivit par : Fanny BAULU, développeur chez Apitic.
 # Liste des commandes à effectuer
 ```bash
 cd lpweb-symfony
-... Ajout des variables d'environnement dans le fichier .env ...
+# Ajout des variables d'environnement dans le fichier .env
 docker-compose build --no-cache
 docker-compose up -d
 docker exec -it symfony-php bash
