@@ -21,3 +21,4 @@ symfony : 7780
 phpmyadmin : 7779
 
 # Page d'accueil
+http://localhost:7780/home
