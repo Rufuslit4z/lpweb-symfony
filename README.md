@@ -1,6 +1,7 @@
 # POC sur une petite boutique e-commerce avec le Framework Symfony
 Suivit par : Fanny BAULU, développeur chez Apitic.  
 Lien du sujet : https://github.com/FannyBauluApitic/TP_NOTE
+Lien non disponible ? Cliquez ici : 
 # Liste des commandes à effectuer
 ```bash
 cd lpweb-symfony
