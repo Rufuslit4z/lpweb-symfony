@@ -16,6 +16,7 @@ services:
       - bridge
 
   mysql:
+    platform: linux/x86_64
     container_name: symfony-mysql
     image: mysql:5.7
     restart: "no" # unless-stopped
